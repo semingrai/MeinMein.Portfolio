@@ -3,43 +3,64 @@
 
 /* Base layout for the entire page */
 body {
-  margin: 0;                          /* Removes default margin */
-  padding: 0;                         /* Removes default padding */
-  display: flex;                      /* Horizontal flex layout (sidebar + main) */
-  height: 100vh;                      /* Full viewport height */
-  background: linear-gradient(        /* Background gradient split */
-    to right,
-    #0a0d12 5%,
-    #243858 25%,
-    #152846 40%,
-    #0a0d12 100%
-  );
-  font-family: 'Inter', sans-serif;  /* Sets default font */
-  color: #ccd6f6;                     /* Light text color */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #ccd6f6;
+  position: relative;
 }
+
+/* Left 30% image */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+   url('pics/wau.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+/* Right 70% dimmed image */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+}
+
+
 
 /* Default anchor tag styles */
 a {
-  color: rgb(4, 7, 4);               /* Very dark green (likely not visible on dark bg) */
-  text-decoration: none;            /* No underline */
+  color: rgb(4, 7, 4);               
+  text-decoration: none;            
 }
 
 /* Sidebar container for 1st div in NAME */
 .sidebar {
-  font-family: cursive;              /* Cursive font for sidebar */
-  background: transparent;           /* Transparent background */
-  width: 20%;
-  min-width: 300px;                  /* Won’t go smaller than this */
-  padding: 20px 30px;                /* Inner spacing */
-  box-sizing: border-box;            /* Includes padding in total width */
-  display: flex;                     /* Layout for vertical stacking */
-  flex-direction: column;           /* Children stack vertically */
+  font-family: cursive;              
+  background: transparent;           
+  width: 30%;
+  min-width: 300px;                  
+  padding: 20px 30px;                
+  box-sizing: border-box;            
+  display: flex;                     
+  flex-direction: column;            
 }
 
 /* Top part of NAME with title and toggle button */
 .sidebar-header {
-  align-items: center;              /* Vertically centers the elements */
-  margin-top: 70px;                 /* Space above */
+  align-items: center;              
+  margin-top: 70px;                 
   display: flex;
   text-align: center;
   margin-left: 5%;
@@ -47,10 +68,10 @@ a {
 
 /* MAIN NAME styling */
 .sidebar-header h1 {
-  font-size: 2.5rem;                /* Large font size */
-  font-weight: 700;                 /* Bold text */
-  color: #6d89b6;                   /* Deep navy text */
-  margin: 0;                        /* Removes default margin */
+  font-size: 2.5rem;                
+  font-weight: 700;                 
+  color: #6d89b6;                   
+  margin: 0;                        
 }
 
 /* intro as in bio */
@@ -66,7 +87,7 @@ a {
 
 /* Hamburger / toggle button (hidden on desktop) */
 .menu-toggle {
-  display: none;                   /* Hidden unless on small screen */
+  display: none;                   
   background: #0f223e;
   color: #99d1c4;
   border: none;
@@ -80,7 +101,7 @@ a {
 .nav-links {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;                     /* Space between links */
+  gap: 0.2rem;                     
 }
 
 /* Individual navigation link */
@@ -94,7 +115,7 @@ a {
   color: #7c90af;
   padding: 8px 12px;
   border-radius: 6px;
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  transition: background-color 0.3s ease;
 }
 
 /* Active or hovered link */
@@ -107,16 +128,16 @@ a {
 /* Main content area */
 main {
   background: transparent;
-  width: 70%;                      /* Takes remaining 60% of space */
-  padding: 40px 30px;              /* Inner spacing */
-  overflow-y: auto;                /* Enables vertical scroll */
+  width: 70%;                      
+  padding: 40px 30px;              
+  overflow-y: auto;                
   height: 100vh;
   box-sizing: border-box;
 }
 
 /* Section within main content */
 section {
-  margin-bottom: 80px;             /* Spacing between sections */
+  margin-bottom: 80px;             
 }
 
 /* Section title */
@@ -129,13 +150,13 @@ section h2 {
 /* Section paragraph text */
 section p {
   font-size: 1.1rem;
-  line-height: 1.6;                /* Improves readability */
+  line-height: 1.6;                
 }
 
 /* Responsive styles for small screens (<=768px) */
 @media (max-width: 768px) {
   body {
-    flex-direction: column;       /* Stack sidebar and main vertically */
+    flex-direction: column;       
     overflow: visible;
     height: auto;
   }
@@ -144,7 +165,7 @@ section p {
     width: 100%;
     min-width: auto;
     padding: 20px;
-    transform: translateX(-100%); /* Hide sidebar off screen by default */
+    transform: translateX(-100%); 
     position: fixed;
     top: 0;
     left: 0;
@@ -154,11 +175,11 @@ section p {
   }
 
   .sidebar.open {
-    transform: translateX(0);     /* Slide sidebar into view */
+    transform: translateX(0);     
   }
 
   .menu-toggle {
-    display: inline-block;        /* Show toggle button on small screens */
+    display: inline-block;        
     position: fixed;
     top: 20px;
     left: 20px;
@@ -167,7 +188,7 @@ section p {
 
   main {
     width: 100%;
-    padding: 80px 20px 20px 20px; /* Extra top padding to avoid overlap with toggle */
+    padding: 80px 20px 20px 20px; 
     height: auto;
   }
 }
@@ -178,7 +199,7 @@ section p {
   gap: 0%;
   margin-top: 10px;
   text-align: center;
-  margin-left: 1%; /* For aligning the spaces in media icons */
+  margin-left: 1%; 
 }
 
 /* Each social media icon image */
@@ -197,13 +218,13 @@ section p {
 
 /* Experience section */
 #experience {
-  margin-bottom: 100px;  /* Adds space below the entire experience section */
+  margin-bottom: 100px;  
 }
 
 #experience h2 {
-  font-size: 2rem;       /* Large heading for the section title */
-  color: #64ffda;        /* Bright teal color to highlight the section title */
-  margin-bottom: 40px;   /* Space below the heading before job entries start */
+  font-size: 2rem;       
+  color: #64ffda;        
+  margin-bottom: 40px;   
 }
 
 .experience-item {
@@ -227,7 +248,7 @@ section p {
   color: #657abd;
   font-size: 1.3rem;
   margin-bottom: 8px;
-  font-family: cursive;  /* Ensures experience headings are in cursive */
+  font-family: cursive;  
 }
 
 .experience-content h4 {
@@ -237,7 +258,7 @@ section p {
 .experience-content p {
   color: #a8b2d1;
   line-height: 1.6;
-  font-family: cursive;  /* Applies cursive font to experience text */
+  font-family: cursive;  
 }
 
 .exp {

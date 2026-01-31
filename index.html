@@ -8,6 +8,7 @@
   <style>
   @media (min-width: 600px) {
     body {
+      
       font-size: 1.2em;
     }
     .sidebar {
@@ -21,7 +22,16 @@
   <link rel="icon" href="https://sdzwildlifeexplorers.org/sites/default/files/2017-07/pandas-closeup.jpg">
   <link rel="stylesheet" href="port.css" />
 </head>
+<body style="
+  margin:0;
+  height:100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('pics/wau.jpg') no-repeat center center;
+  background-size: 120%;
+"
+>
+</body>
 <body>
+
 
   <!-- Sidebar section -->
   <div class="sidebar" id="sidebar" style="text-align: center;">
@@ -31,40 +41,55 @@
     </div>
 
     <!-- Intro/Bio -->
-    <p id="intro">🐼Kaggle ML.🐼</p>
+    <p id="intro">Major-Data Science
+    </br>
+      Minor-CSE
+   </p>
+
+    
+    <h2></h2>
+      <p style="font-family: cursive;">
+
+      </p>
+
 
     <!-- Navigation links -->
     <nav class="nav-links" id="navLinks">
       <a href="#about">|About|</a>
-      <a href="#projects">|Accomplishments|</a>
+      <a href="#projects">|Projects|</a>
       <a href="#contact">|Contact|</a>
 
+      
       <!-- Social media icons -->
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/seming-rai-77086232a/" target="_blank">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
         </a>
+        <a href="https://github.com/HwangChei" target="_blank">
+          <img src="pics/git.png" alt="GitHub" />
+        </a>
         <a href="https://www.kaggle.com/hwangcheirai" target="_blank">
           <img src="pics/transparent logo.png" alt="kaggle" />
-        </a>
-        <a href="https://github.com/HwangChei" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
         </a>
       </div>
     </nav>
   </div>
 
+
   <!-- Main content -->
   <main>
-    <!-- About section -->
-    <section id="about">
-      <h2></h2>
-      <p style="font-family: cursive;">
-        I am a going to be a freshmen in college being passionate about reading, coding, and research. I am currently interested in AI/ML and Data Science,
-        and self-learning my interests from online courses. I also plan to tutor people for the SAT and math at schoolhouse.world.
-        I love watching paleontology documentaries and have watched almost all of them. 
-      </p>
+     <!-- Skills -->
+   <section id="Skills">
+    <div style="font-family: cursive;">
+      <h4>Skills</h4 >
+      <li>Programming: Python</li>
+      <li> Data & ML: pandas, NumPy, scikit-learn</li>
+      <li>Visualization: Streamlit, Plotly, Matplotlib, Seaborn</li>
+      <li>Tools: Git, GitHub, Jupyter</li>
     </section>
+    </div>
+  
+
 
     <!-- Projects / Experience -->
     <section id="projects">
@@ -82,22 +107,21 @@
             </p>
           </div>
           </div>
+
+
         <div class="experience-item exp">
           <div class="experience-date">2025/05/28-2025/07/15</div>
           <div class="experience-content">
             <h3>CS50 Python<h4>Finished CS50P with all of its problem sets as well as the final project</h4></h3>
             <p>
-              <img src="pics\CS50P.png" alt="CS50" height="325" width="425"/> 
-              <br />
-              ...
-              <br />
-              <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">Do not</a>
+              <a href="https://semin-insta-dashboard.streamlit.app/" target="_blank"><img src="pics\CS50P.png" alt="CS50" height="225" width="325"/></a>
             </p>
           </div>
         </div>
         
       </section>
     </section>
+
 
     <!-- Contact section -->
     <section id="contact">
@@ -112,6 +136,7 @@
       </p>
     </section>
   </main>
+
 
   <script src="scripts.js"></script>
 </body>
