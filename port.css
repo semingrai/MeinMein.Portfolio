@@ -12,7 +12,10 @@ body {
   position: relative;
 }
 
-/* Left 30% image */
+
+/* Left 25% image with blend effect */
+
+
 body::before {
   content: "";
   position: fixed;
@@ -21,12 +24,16 @@ body::before {
   width: 25%;
   height: 100%;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+   linear-gradient(to right, rgba(4,18,23,0) 0%, rgba(4,18,23,1) 100%),
    url('pics/wau.jpg') no-repeat center center;
   background-size: cover;
   z-index: -1;
 }
 
-/* Right 70% dimmed image */
+
+/* Right 75% solid background */
+
+
 body::after {
   content: "";
   position: fixed;
@@ -34,9 +41,9 @@ body::after {
   right: 0;
   width: 75%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  background: #041217;
+  z-index: -1;
 }
-
 
 
 /* Default anchor tag styles */
