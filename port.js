@@ -165,7 +165,7 @@ const nnCtx = nnCanvas.getContext('2d');
 nnCanvas.width = window.innerWidth;
 nnCanvas.height = window.innerHeight;
 
-const LAYERS = [3, 10, 10, 10, 6, 6];
+const LAYERS = [3, 10, 10, 10, 10, 6];
 
 // Layer delay scales with max neurons in adjacent layers
 // More connections = slightly more time to travel
